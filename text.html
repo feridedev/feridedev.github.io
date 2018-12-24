@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello web with Bootstrap</title>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		 <link href="css/bootstrap.min.css" rel="stylesheet"/>
+		 <link href="css/custom.css" rel="stylesheet"/>
+	</head>
+	<body>
+
+		<div class="container">
+			<input type="text" name="search" id="search" class="form-control" placeholder="Search" />
+			<div class="content"><h1>Pascal</h1></div>
+			<div class="row content" id="booksPascal">
+				
+			</div>
+
+					<div class="content"><h1>Scala</h1></div>
+			<div class="row content" id="booksScala">
+					<h1>Scala</h1>
+			</div>
+			
+		</div>
+		 <script src="https://code.jquery.com/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
+		<script>
+			var books = { 
+					"Pascal" : 
+					[
+						{ "Name" : "Pascal Made Simple", "price" : 700 },
+						{ "Name" : "Guide to Pascal", "price" : 400 },
+						{ "Name" : "Guide to Pascal1", "price" : 400 },
+						{ "Name" : "Guide to Pascal2", "price" : 400 }
+					],
+					"Scala" : 
+					[
+							{ "Name" : "Scala for the Impatient", "price" : 1000 },
+							{ "Name" : "Scala in Depth", "price" : 1300 }
+					]
+				}
+		var resultsPascal=""
+		var i=0
+		for (i=0;i<books.Pascal.length;i++){
+			resultsPascal+=
+					'<div class="col-md-4 " id="class_pascal_'+i+'">'+
+					'<div class="bordered-content" style="margin-top:30px">'+
+					'<p>'+books.Pascal[i].Name+'</p>'+
+					'</div>'+
+					'</div>'+
+					'</div>'
+
+		}
+		document.getElementById('booksPascal').innerHTML=resultsPascal
+		var resultsScala=""
+		for (i=0;i<books.Scala.length;i++){
+			resultsScala+=
+					'<div class="col-md-4">'+
+					'<div class="bordered-content" style="margin-top:30px">'+
+					'<p>'+books.Scala[i].Name+'</p>'+
+					'</div>'+
+					'</div>'+
+					'</div>'
+
+		}
+
+		
+		document.getElementById('booksScala').innerHTML=resultsScala
+		</script>
+	</body>
+</html>
